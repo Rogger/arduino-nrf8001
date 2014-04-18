@@ -4,7 +4,6 @@
 
 #define RX_PIPE 7
 #define TX_PIPE 8
-#define BATTERY_PIPE 3
 
 // change nRF8001 reset pin to -1 if it's not connected
 // Redbear BLE Shield users: to my knowledge reset pin is not connected so use -1!
@@ -54,9 +53,8 @@ void setup() {
     while (1);
   }
   
-  // These functions merely request device address,
-  // actual responses are asynchronous. They'll return error codes
-  // if somehow the request itself failed, for example because
+  // These functions merely request device address, device version and batttery level.
+  // They'll return error codes if the request failed, for example because
   // the device is not ready for these commands.
   nrf->getDeviceAddress();
   nrf->poll();
@@ -80,16 +78,9 @@ void loop() {
     Serial.print("sending ");
     Serial.println(hello);
    
-    nrf->sendData(TX_PIPE, strlen(hello) , (uint8_t *)hello);
-    
+    nrf->sendData(TX_PIPE, strlen(hello) , (uint8_t *)hello); 
     lastSent = millis();
-    
-    
-    //uint8_t bat = 78;
-    // If battery pipe is open
-    /*if (nrf->isPipeOpen(BATTERY_PIPE) && nrf->creditsAvailable()) {
-      nrf->sendData(BATTERY_PIPE, 1, &bat);
-    }*/
+  
     
   } else if (nrf->getConnectionStatus() == Disconnected) {
     Serial.println("Reconnecting");
