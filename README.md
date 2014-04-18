@@ -5,7 +5,7 @@ is implemented, but not all commands and interactions have been fully
 tested.
 
 ## UART
-This fork adds an example UART application for the nRF8001 CX/DX chip versions. The CX version is older compared to the DX. The DX is backwards compatible with the CX. I tested this example with the nrf80001 CX module from Olimex. Use the nrfURT app from Nordic's website with your iOS/Android device for tests.
+This fork adds an example UART application for the nRF8001 CX/DX chip versions. The CX version is older compared to the DX. The DX is backwards compatible with the CX. I tested this example with the nrf8001 CX module from Olimex. Use the nRF-URT app from Nordic's website with your iOS/Android device for tests.
 
 ## Installation
 
