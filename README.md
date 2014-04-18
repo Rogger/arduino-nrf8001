@@ -1,8 +1,11 @@
 # nRF8001 support for Arduino
 
-This is a work in progress. Most of the functionality of the nRF8001 chip
+Most of the functionality of the nRF8001 chip
 is implemented, but not all commands and interactions have been fully
 tested.
+
+## UART
+This fork adds an example UART application for the nRF8001 CX chip version. The CX version is older compared to the DX. I tested this example with the nrf80001 CX module from Olimex. Use the nrfURT app from Nordic's website with your iOS/Android device for tests.
 
 ## Installation
 
@@ -11,9 +14,7 @@ On a Mac:
     cd ~/Documents/Arduino/libraries
     git clone https://github.com/guanix/arduino-nrf8001.git nRF8001
 
-The included example works with the Heart Rate function of the Nordic iOS app
-and sends the nRF8001’s internal temperature reading as heart rate and the
-fixed number 78 as battery level. It assumes the following pin assignments,
+It assumes the following pin assignments,
 easily changed:
 
 * RESET on digital pin 7
